@@ -1,0 +1,37 @@
+# Dependencies
+**/node_modules/
+**/venv/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Build outputs
+**/build/
+**/dist/
+*.log
+*.txt
+
+# Database files
+database.db
+# panchayat.db is kept as it's the main repo DB for demo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep

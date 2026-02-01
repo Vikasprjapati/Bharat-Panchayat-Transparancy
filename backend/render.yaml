@@ -1,0 +1,20 @@
+# Render.com Deployment Configuration
+# This file configures how Render deploys the backend
+
+services:
+  # Web Service for FastAPI Backend
+  - type: web
+    name: bharat-panchayat-backend
+    env: python
+    region: singapore  # Choose closest region to India
+    plan: free
+    branch: main
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: ALLOWED_ORIGINS
+        value: http://localhost:3000,https://your-app-name.netlify.app
+        # IMPORTANT: Update this with your actual Netlify URL after deployment
